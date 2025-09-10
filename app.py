@@ -26,13 +26,8 @@ st.set_page_config(page_title="UK Carbon Intensity Tracker", page_icon="🌍", l
 st_autorefresh(interval=31 * 60 * 1000, key="data_refresh")
 
 # ---- Top Section with Centered Logo ----
-st.markdown(
-    '<div style="text-align:center">'
-    '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Globe_icon.svg/200px-Globe_icon.svg.png" width="100">'
-    '</div>',
-    unsafe_allow_html=True
-)
-
+# ---- Top Section with Local Logo ----
+st.image("globe.png", width=100)  # uses local file
 st.title("🌍 UK Carbon Intensity Tracker")
 st.markdown("""
 Welcome! This dashboard tracks the carbon intensity of Great Britain's electricity grid in real-time.  
@@ -40,6 +35,7 @@ Use the sidebar to select which data you want to see.
 """)
 st.caption("🔄 Auto-refreshes every 31 minutes to match National Grid updates.")
 st.write("")  # spacing
+
 
 # ---- Last Updated ----
 st.write(f"🕒 Last updated at: **{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}**")
